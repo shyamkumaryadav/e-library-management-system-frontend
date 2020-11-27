@@ -39,7 +39,7 @@
             @click="() => {}"
           >
             <v-list-item-title
-              >github {{ n }}</v-list-item-title
+              >github2 {{ n }}</v-list-item-title
             >
           </v-list-item>
         </v-list>

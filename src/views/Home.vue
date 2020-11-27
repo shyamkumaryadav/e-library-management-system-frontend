@@ -2,7 +2,7 @@
   <v-container fluid>
 
     <v-row>
-      <v-img contain src="https://raw.githubusercontent.com/shyamkumaryadav/E_library/master/src/system/static/system/images/imgs/home-bg.jpg">
+      <v-img contain src="../assets/home-bg.jpg">
         <template v-slot:placeholder>
           <v-skeleton-loader
           type="image"

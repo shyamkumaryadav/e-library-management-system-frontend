@@ -1,3 +1,5 @@
 module.exports = {
-    // options
+    outputDir: 'dist/public',
+    assetsDir: 'static',
+    // indexPath: 'public/todo/index.html',
 }

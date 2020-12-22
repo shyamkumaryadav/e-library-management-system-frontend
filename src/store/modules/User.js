@@ -25,13 +25,13 @@ export default {
     },
     // Called from components to commit a mutation (like api call) dispatch
     actions: {
-        async login({commit}, {url, username, password}){
-            const data = await fetch(url, {
+        async login({commit}, {username, password}){
+            const data = await fetch(`${process.env.VUE_APP_API_URL}/auth/token/`, {
                 method: 'POST',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                cache: "no-cache",
                 body: JSON.stringify({username, password})
             })
             const user = await data.json();

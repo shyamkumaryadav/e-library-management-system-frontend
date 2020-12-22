@@ -1,13 +1,19 @@
 export default {
     // namespaced: true,
     state: {
-        BooksList: [],
+        count: 0,
+        next: '',
+        previous: '',
+        results: [],
         isDone: true
     },
     // Mutat the state (Update state)
     mutations: {
         setBook(state, payload){
-            state.BooksList = payload.books
+            state.count = payload.books.count
+            state.next = payload.books.next
+            state.previous = payload.books.previous
+            state.results = payload.books.results
             state.isDone = false
         }
 
@@ -15,7 +21,7 @@ export default {
     // Called from components to commit a mutation (like api call)
     actions: {
         async getBook({commit}){
-            const book = await fetch('https://jsonplaceholder.typicode.com/posts')
+            const book = await fetch(`${process.env.VUE_APP_API_URL}/books`)
             const json = await book.json();
             console.log(json);
             commit('setBook', {
